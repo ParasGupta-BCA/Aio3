@@ -1,6 +1,6 @@
-# Aio3 – Static Site with Custom Loader
+# Aio3 – Mentorship Platform
 
-A modern, responsive, Framer‑exported website enhanced with a sleek black‑themed loading screen, brand logo, animated progress, and dynamic status text.
+A modern, responsive, website enhanced with a sleek black‑themed loading screen, brand logo, animated progress, and dynamic status text.
 
 ## ✨ What’s Included
 - **Custom Loader**: Black theme, brand logo, animated progress bar, dynamic text, smooth fade‑out
