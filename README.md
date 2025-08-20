@@ -1,6 +1,6 @@
 # Aio3 – Mentorship Platform
 
-A modern, responsive, website enhanced with a sleek black‑themed loading screen, brand logo, animated progress, and dynamic status text.
+Our platform uses advanced AI to analyze student profiles and match them with the best PhD mentors based on research interests and expertise.
 
 ## ✨ What’s Included
 - **Custom Loader**: Black theme, brand logo, animated progress bar, dynamic text, smooth fade‑out
