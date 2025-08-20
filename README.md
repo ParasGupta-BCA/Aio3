@@ -1,253 +1,103 @@
-# Aio3 Updated - Modern Website with Node.js Backend
+# Aio3 – Static Site with Custom Loader
 
-A modern, full-stack website featuring a sleek black-themed loading screen, comprehensive Node.js backend, and organized project structure.
+A modern, responsive, Framer‑exported website enhanced with a sleek black‑themed loading screen, brand logo, animated progress, and dynamic status text.
 
-## 🚀 Features
+## ✨ What’s Included
+- **Custom Loader**: Black theme, brand logo, animated progress bar, dynamic text, smooth fade‑out
+- **Responsive**: Optimized across desktop, tablet, and mobile (portrait/landscape)
+- **Framer Export**: Production build output included under `assets/`
+- **Zero Backend Required**: Works on any static host
 
-### Frontend
-- **Modern Black Theme Loader**: Sleek loading screen with animated spinner, progress bar, and dynamic text
-- **Responsive Design**: Mobile-first approach with modern CSS animations
-- **Interactive Elements**: Smooth transitions and engaging user experience
-
-### Backend
-- **Express.js Server**: Fast, unopinionated web framework
-- **MongoDB Integration**: NoSQL database with Mongoose ODM
-- **JWT Authentication**: Secure user authentication and authorization
-- **File Upload System**: Support for multiple file types with size limits
-- **Email Integration**: Contact form with automatic email notifications
-- **Input Validation**: Comprehensive request validation and sanitization
-- **Security Features**: Helmet.js, CORS, rate limiting, and more
-
-## 🏗️ Project Structure
-
-```
-aio3-updated/
-├── public/                 # Static frontend files
-│   ├── index.html         # Main website
-│   ├── css/               # Stylesheets
-│   │   └── loader.css     # Loader styles
-│   └── js/                # Frontend JavaScript
-│       └── loader.js      # Loader functionality
-├── routes/                 # API route handlers
-│   ├── auth.js            # Authentication routes
-│   ├── users.js           # User management routes
-│   ├── contact.js         # Contact form routes
-│   └── upload.js          # File upload routes
-├── models/                 # Database models
-│   └── User.js            # User schema and methods
-├── middleware/             # Custom middleware
-│   └── auth.js            # JWT authentication middleware
-├── config/                 # Configuration files
-│   └── database.js        # MongoDB connection
-├── utils/                  # Utility functions
-│   └── helpers.js         # Common helper functions
-├── server.js               # Main server file
-├── package.json            # Project dependencies
-└── config.env.example      # Environment variables template
+## 📁 Project Structure
+```text
+Aio3 Updated/
+├─ index.html                      # Main site (Framer export + custom loader)
+├─ components/
+│  └─ loader.html                  # Loader markup (reference snippet)
+├─ public/
+│  ├─ css/
+│  │  └─ loader.css               # Loader styles (incl. responsive rules)
+│  └─ js/
+│     └─ loader.js                # Loader controller (timings, steps, events)
+├─ assets/
+│  ├─ images/                      # Site images (logo, background, etc.)
+│  │  ├─ pYyLkU7rZYsUOhfbzsPXOVCHfBE.webp  # Current logo used by the loader
+│  │  ├─ AVsssNQRylEZc5orEWvz8Q1wQT4.gif
+│  │  └─ jPUl6MiiEHGtNO99raa9C3IDSyQ.jpg
+│  └─ sites/ ...                   # Framer runtime/modules
+├─ public/css/loader.css           # (duplicate path for quick access in editors)
+├─ public/js/loader.js             # (duplicate path for quick access in editors)
+├─ package.json
+└─ README.md
 ```
 
-## 🛠️ Installation
+## ▶️ Run Locally
+You can open `index.html` directly in a browser, or serve the folder with a simple static server for best results (recommended):
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- MongoDB (local or cloud)
-
-### Setup Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd aio3-updated
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Environment Configuration**
-   ```bash
-   cp config.env.example .env
-   # Edit .env with your configuration
-   ```
-
-4. **Database Setup**
-   - Install MongoDB locally or use MongoDB Atlas
-   - Update `MONGO_URI` in your `.env` file
-
-5. **Email Configuration** (Optional)
-   - Set up Gmail app password
-   - Update email credentials in `.env`
-
-## 🚀 Running the Application
-
-### Development Mode
-```bash
-npm run dev
-```
-Server runs on `http://localhost:3000`
-
-### Production Mode
-```bash
-npm start
+- Python (Windows PowerShell):
+```powershell
+cd "C:\Users\PARAS\Desktop\Aiotize\Aio3 Updated"
+python -m http.server 8000
+# Then open http://localhost:8000/
 ```
 
-### Full Stack Development
-```bash
-npm run dev:full
-```
-Runs both backend and frontend in development mode
+Any static server or IDE live server also works.
 
-## 📡 API Endpoints
+## 🧩 Loader Overview
+The loader is embedded near the top of the `<body>` in `index.html` and its assets are referenced from `public/`.
 
-### Authentication
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user (protected)
-
-### User Management
-- `GET /api/users/profile` - Get user profile (protected)
-- `PUT /api/users/profile` - Update user profile (protected)
-- `PUT /api/users/password` - Change password (protected)
-- `DELETE /api/users/profile` - Delete account (protected)
-
-### Contact Form
-- `POST /api/contact` - Submit contact form
-
-### File Upload
-- `POST /api/upload/single` - Upload single file (protected)
-- `POST /api/upload/multiple` - Upload multiple files (protected)
-- `DELETE /api/upload/:filename` - Delete file (protected)
-
-## 🔧 Configuration
-
-### Environment Variables
-- `NODE_ENV` - Environment (development/production)
-- `PORT` - Server port (default: 3000)
-- `MONGO_URI` - MongoDB connection string
-- `JWT_SECRET` - JWT signing secret
-- `EMAIL_USER` - Gmail username
-- `EMAIL_PASS` - Gmail app password
-- `ADMIN_EMAIL` - Admin notification email
-
-### Security Features
-- **Helmet.js**: Security headers
-- **CORS**: Cross-origin resource sharing
-- **Rate Limiting**: API request throttling
-- **Input Validation**: Request data sanitization
-- **JWT Tokens**: Secure authentication
-
-## 🎨 Customization
-
-### Loader Styling
-Edit `public/css/loader.css` to customize:
-- Colors and themes
-- Animation timing
-- Progress bar styles
-- Text content and fonts
-
-### Backend Features
-- Add new API routes in `routes/` directory
-- Create new models in `models/` directory
-- Implement custom middleware in `middleware/` directory
-
-## 📱 Frontend Features
-
-### Modern Loader
-- **Animated Spinner**: Smooth rotating animation
-- **Progress Bar**: Visual loading progress
-- **Dynamic Text**: Changing status messages
-- **Responsive Design**: Works on all devices
-- **Smooth Transitions**: Elegant fade-out effects
-
-### Interactive Elements
-- **Contact Form**: User-friendly input fields
-- **File Upload**: Drag-and-drop interface
-- **User Dashboard**: Profile management
-- **Responsive Layout**: Mobile-optimized design
-
-## 🚀 Deployment
-
-### Local Development
-```bash
-npm run dev
+- HTML (in `index.html`):
+```html
+<div id="loading-screen" class="loader-container">
+  <div class="loader-logo">
+    <img src="assets/images/pYyLkU7rZYsUOhfbzsPXOVCHfBE.webp" alt="Logo" class="logo-image" />
+  </div>
+  <div class="loader-text">Initializing...</div>
+  <div class="loader-subtitle">Please wait while we prepare your experience</div>
+  <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+  <div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+</div>
 ```
 
-### Production Deployment
-1. Set `NODE_ENV=production`
-2. Configure production MongoDB
-3. Set secure JWT secret
-4. Use PM2 or similar process manager
-5. Set up reverse proxy (Nginx/Apache)
+- CSS (in `public/css/loader.css`):
+  - High z‑index to overlay Framer badge and content
+  - Brand logo styling via `.loader-logo` and `.logo-image`
+  - Responsive sizes for desktop/tablet/mobile/landscape
+  - Smooth fade‑out animation (`.fade-out`)
 
-### Docker Deployment
-```dockerfile
-FROM node:16-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
-```
+- JS (in `public/js/loader.js`):
+  - Dynamic steps via `loadingSteps` array
+  - Progress animation and text rotation
+  - Auto‑hide after window load (3s delay) with a 15s fallback
+  - Fires a custom `loaderHidden` event and removes scroll lock
+  - Test shortcuts: press `L` to show, `H` to hide
 
-## 🧪 Testing
+## 🛠️ Customize
+- **Logo**
+  - Replace the image at: `assets/images/pYyLkU7rZYsUOhfbzsPXOVCHfBE.webp`
+  - Or change the path in `index.html` inside the `.loader-logo` image `src`
+- **Text & Steps** (in `public/js/loader.js`)
+  - Edit the `loadingSteps` array
+  - Adjust timings in `bindEvents()` (window load delay and fallback)
+- **Colors & Theme** (in `public/css/loader.css`)
+  - Background color of the overlay
+  - Gradient overlays, dot colors, progress bar style
+- **Responsive Sizes** (in `public/css/loader.css`)
+  - Tweak `.loader-logo` sizes inside the media queries
 
-### API Testing
-Use tools like Postman or Insomnia to test endpoints:
-- Import the API collection
-- Set environment variables
-- Test authentication flow
-- Verify file uploads
+## 🔎 Known Paths in `index.html`
+- Stylesheet: `<link rel="stylesheet" href="public/css/loader.css">`
+- Script: `<script src="public/js/loader.js"></script>` (included at the end of the page)
 
-### Loader Testing
-- Open `public/index.html` in browser
-- Test different screen sizes
-- Verify smooth animations
-- Check loading states
+## 🚀 Deploy
+This project is a static website. Host on any static provider:
+- GitHub Pages, Netlify, Vercel, Cloudflare Pages, S3/CloudFront, or any static server
 
-## 🤝 Contributing
+## 🧾 Changelog (recent)
+- Integrated brand logo into loader (`assets/images/pYyLkU7rZYsUOhfbzsPXOVCHfBE.webp`)
+- Improved responsive loader sizing (desktop, mobile, small mobile, landscape)
+- Increased loader visibility timing; added keyboard shortcuts for testing
+- Fixed asset paths to `public/` and ensured overlay z‑index is above Framer badge
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support and questions:
-- Create an issue in the repository
-- Check the documentation
-- Review the code examples
-
-## 🔄 Updates
-
-### Recent Changes
-- ✅ Added Node.js backend with Express
-- ✅ Implemented MongoDB integration
-- ✅ Added JWT authentication system
-- ✅ Created file upload functionality
-- ✅ Added contact form with email
-- ✅ Implemented comprehensive API
-- ✅ Added security middleware
-- ✅ Organized project structure
-
-### Future Enhancements
-- [ ] User dashboard interface
-- [ ] Admin panel
-- [ ] Real-time notifications
-- [ ] Image optimization
-- [ ] Caching system
-- [ ] Analytics integration
-- [ ] Multi-language support
-- [ ] PWA features
-
----
-
-**Built with ❤️ using Node.js, Express, MongoDB, and modern web technologies**
+## 🪪 License
+This project is provided as‑is for static hosting and customization. If you add your own license, place it alongside this file.
